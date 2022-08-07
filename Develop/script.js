@@ -5,24 +5,23 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 //Variables for Time Containers Where Text is Stored
 var saveBtn = $('.saveBtn');
 
-
 //Setting the Timer for the Planner
-    //Current time based on seconds
+//Current time based on seconds
 var rightNow = moment().format('HH');
 
 function currentTime() {
-        rightNow = moment().format('HH');
-        $('#currentTime').text(rightNow);
-    }
+    rightNow = moment().format('HH');
+    $('#currentTime').text(rightNow);
+}
 setInterval(currentTime, 1000);
-    //checking the time
+//checking the time
 console.log(rightNow);
 
 
 //Change Class based on the Timer
 function setTimeStlyes() {
     //looking through every class with "col-8" & changing the id to an interger -- the color class will only apply to the col-8 class in the HTML
-    $(".col-8").each(function (){
+    $(".col-8").each(function () {
         //changing the timeblock id to an interger
         var timeBlock = parseInt($(this).attr('id'));
         console.log(timeBlock);
@@ -30,6 +29,7 @@ function setTimeStlyes() {
         thisTime = parseInt(rightNow);
         console.log(thisTime)
 
+        //comparing time in the timeblock to the current hour
         if (thisTime > timeBlock) {
             $(this).addClass("past");
         } else if (thisTime < timeBlock) {
@@ -38,8 +38,9 @@ function setTimeStlyes() {
             $(this).addClass("present")
         }
     })
-    
+
 }
+//running the funtion to apply the syles based on the timer
 setTimeStlyes();
 
 
@@ -50,7 +51,7 @@ saveBtn.on('click', function () {
     //Checking to See what button I'm selecting
     console.log($(this).parent().index())
 
-    //updating the text from the text box
+    //Setting the planned task within the text box to a variable
     var h8 = $('#8').val();
     var h8 = $('#8').val();
     var h9 = $('#9').val();
@@ -76,7 +77,7 @@ saveBtn.on('click', function () {
     localStorage.setItem('text17', h17);
 })
 
-//Displaying Planned Tasks from Local Storage
+//Retriving the Planned Tasks from Local Storage & displaying it in the text box
 var planner8 = localStorage.getItem('text8');
 $('#8').val(planner8);
 var planner9 = localStorage.getItem('text9');
