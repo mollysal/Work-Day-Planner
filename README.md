@@ -17,6 +17,8 @@ U of M Coding Bootcamp starter code
 
 U of M Coding Bootcamp Instructors & TAs
 
+Classmates: Justin Liu 
+
 TextArea Tag W3Schools: https://www.w3schools.com/tags/tag_textarea.asp 
 
 ## Features

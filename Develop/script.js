@@ -6,7 +6,41 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 var saveBtn = $('.saveBtn');
 
 
-//Changing Class based on Time
+//Setting the Timer for the Planner
+    //Current time based on seconds
+var rightNow = moment().format('HH');
+
+function currentTime() {
+        rightNow = moment().format('HH');
+        $('#currentTime').text(rightNow);
+    }
+setInterval(currentTime, 1000);
+    //checking the time
+console.log(rightNow);
+
+
+//Change Class based on the Timer
+function setTimeStlyes() {
+    //looking through every class with "col-8" & changing the id to an interger -- the color class will only apply to the col-8 class in the HTML
+    $(".col-8").each(function (){
+        //changing the timeblock id to an interger
+        var timeBlock = parseInt($(this).attr('id'));
+        console.log(timeBlock);
+        //changing the time to an interger
+        thisTime = parseInt(rightNow);
+        console.log(thisTime)
+
+        if (thisTime > timeBlock) {
+            $(this).addClass("past");
+        } else if (thisTime < timeBlock) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present")
+        }
+    })
+    
+}
+setTimeStlyes();
 
 
 //Saving To-Do Planned Item
@@ -53,14 +87,14 @@ var planner11 = localStorage.getItem('text11');
 $('#11').val(planner11);
 var planner12 = localStorage.getItem('text12');
 $('#12').val(planner12);
-var planner12 = localStorage.getItem('text13');
+var planner13 = localStorage.getItem('text13');
 $('#13').val(planner13);
-var planner12 = localStorage.getItem('text14');
+var planner14 = localStorage.getItem('text14');
 $('#14').val(planner14);
-var planner12 = localStorage.getItem('text15');
+var planner15 = localStorage.getItem('text15');
 $('#15').val(planner15);
-var planner12 = localStorage.getItem('text16');
+var planner16 = localStorage.getItem('text16');
 $('#16').val(planner16);
-var planner12 = localStorage.getItem('text17');
+var planner17 = localStorage.getItem('text17');
 $('#17').val(planner17);
 
