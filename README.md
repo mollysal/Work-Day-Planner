@@ -17,7 +17,7 @@ U of M Coding Bootcamp starter code
 
 U of M Coding Bootcamp Instructors & TAs
 
-JS Arrow Function (W3 Schools): https://www.w3schools.com/js/js_arrow_function.asp
+TextArea Tag W3Schools: https://www.w3schools.com/tags/tag_textarea.asp 
 
 ## Features
 
