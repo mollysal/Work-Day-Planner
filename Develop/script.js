@@ -1,3 +1,7 @@
+//To Add another Timeblock update HTML
+//Add a new variable within the on click function & define it to local storage
+//Add a new variable to retrieve from local storage & print it back to the text field.
+
 //Current Date displayed at the top of page
 var today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
